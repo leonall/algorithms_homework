@@ -36,7 +36,7 @@ class Test_bubble_sort(unittest.TestCase):
             arr = range(20)
             i = np.random.choice(range(20))
             self.assertEqual(binary_search(arr, arr[i]), i)
-            self.assertEqual(binary_search(arr, -1), False)
+            self.assertFalse(binary_search(arr, -1), False)
 
     def test_binary_search2(self):
         for _ in range(10):
@@ -45,6 +45,6 @@ class Test_bubble_sort(unittest.TestCase):
             if var in arr:
                 self.assertEqual(arr[binary_search(arr, var)], var)
             else:
-                self.assertEqual(binary_search(arr, var), False)
+                self.assertFalse(binary_search(arr, var), False)
 if __name__ == '__main__':
     unittest.main()

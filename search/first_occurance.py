@@ -56,11 +56,11 @@ class Test_bubble_sort(unittest.TestCase):
             if var in arr:
                 self.assertEqual(first_occurance(arr, var), arr.index(var))
             else:
-                self.assertEqual(binary_search(arr, var), False)
+                self.assertFalse(binary_search(arr, var), False)
             arr2 = [1] * 10
             self.assertEqual(first_occurance(arr2, 1), 0)
-            self.assertEqual(first_occurance(arr2, 0), False)
-            self.assertEqual(first_occurance(arr2, 2.5), False)
+            self.assertFalse(first_occurance(arr2, 0), False)
+            self.assertFalse(first_occurance(arr2, 2.5), False)
 
     def test_binary_search(self):
         self._test_binary_search(self.fun1)
