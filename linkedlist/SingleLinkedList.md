@@ -47,12 +47,15 @@ def __len__(self):
 ```
 
 ### 3. 追加节点
+
 追加节点还是比较简单的,如果head节点不存在，则当前节点为head节点，否则的话找到尾节点，将尾节点的next指向当前节点（可以添加head和tail两个节点，就不用递归寻找尾节点了）
+
 ![追加节点](http://img.blog.csdn.net/20151119233848487)
+
 ```
 """追加节点"""
 
-def append(self, data):
+def add(self, data):
     """
     1.head 为none :head-->node
     2.tail.nex-->node
@@ -70,7 +73,9 @@ def append(self, data):
 ```
 
 ### 4. 获取节点
+
 获取节点也是比较容易的，无非就是判断index值的正负
+
 ```
 def get(self, index):
     """
@@ -86,8 +91,11 @@ def get(self, index):
         index -= 1
     return pre
 ```
+
 ### 5. 设置节点
+
 找到当前节点赋值即可
+
 ```
 """设置节点"""
 
@@ -97,9 +105,12 @@ def set(self, index, data):
         node.data = data
     return node
 ```
+
 ### 6. 插入节点
+
 插入节点需要找到插入节点的前一个节点pre_node（索引index的正负，前一节点不同，需要判断一下），然后将pre_node.nex指向当前节点。同时将当前节点的nex指向pre_node.nex.nex
 ![插入节点](http://img.blog.csdn.net/20151119233548930)
+
 ```
 """插入节点"""
 
@@ -131,13 +142,17 @@ def insert(self, index, data):
             return False
     return node
 ```
+
 ### 7. 删除节点
+
 删除节点，也要区分一下索引的正负。找到当前节点的前一个节点pre_node和后一个节点next_node，将pre_node.nex-->next_node即可
+
 ![删除节点](http://img.blog.csdn.net/20151120112608565)
+
 ```
 """删除某个元素"""
 
-def delete(self, index):
+def remove(self, index):
     f = index if index > 0 else abs(index + 1)
     if len(self) <= f:
         return False
@@ -155,11 +170,34 @@ def delete(self, index):
     return pre.data
 ```
 
-### 8. 反转链表
+### 8. 查找
+
+```
+def search(self, target):
+    """
+    :param data:
+    :return: index
+    """
+    index = 0
+    current = self.head
+    Found = False
+    while current and not Found:
+        if current.data == target:
+            Found = True
+            break
+        else:
+            index += 1
+            current = current.next
+    return Found and index
+```
+
+### 9. 反转链表
+
 反转链表的实现有多种方式，比较简单的就是生成一个新的链表－－》可以用数组存储所有节点让后倒序生成新的链表
 在这里用下面这种方式生产：
 反转链表就是将node.nex-->pre_node 递归实现即可，然后让tail赋值为head
 ![反转链表](http://img.blog.csdn.net/20151119233824408)
+
 ```
 """反转链表"""
 
@@ -183,7 +221,9 @@ def __reversed__(self):
 
     return reverse(self.head, self.head.nex)
 ```
-### 9. 清空链表
+
+### 10. 清空链表
+
 将头赋为空就好
 ```
 """清空链表"""
