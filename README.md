@@ -39,3 +39,4 @@
 
 - [X] [单向链表 Python 实现](linkedlist/SingleLinkedList.md)
 - [X] [双向链表 Python 实现](linkedlist/DoublyLinkedList.md)
+- [X] [链表去重](linkedlist/remove_duplicates.py)
