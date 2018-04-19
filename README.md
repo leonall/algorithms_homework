@@ -44,4 +44,5 @@
 
 相比数组，单链表在时间上并没有优势，优势在内存。特别是需要调整大小的时候，链表的时间和内存都是常数，而数组都是线性。
 
-[单向链表 Python 实现](linkedlist/SingleLinkedList.py)
+* [单向链表 Python 实现](linkedlist/SingleLinkedList.md)
+* [双向链表 Python 实现](linkedlist/DoublyLinkedList.md)
