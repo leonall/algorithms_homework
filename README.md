@@ -10,12 +10,7 @@
 ### 查找
 
 - [X] [二分法查找](search/binary_search.py)
-
-先排序后查找，目前针对整数 list。若找到，返回该数的索引，否则，返回 False
-
 - [X] [firsh_occurance](search/first_occurance.py)
-
-使用二分法进行查找，若找到，返回排在最前面的数的指引；否则，返回 False
 
 ## 数据结构
 
@@ -42,7 +37,5 @@
 * 不支持随机访问：无法根据下标去直接访问，必须从头一个一个往后面找。（线性阶）
 * 头尾位置的删除插入 O(1)，中间位置，删除前需要顺序查找，效率 O(n)。
 
-相比数组，单链表在时间上并没有优势，优势在内存。特别是需要调整大小的时候，链表的时间和内存都是常数，而数组都是线性。
-
-* [单向链表 Python 实现](linkedlist/SingleLinkedList.md)
-* [双向链表 Python 实现](linkedlist/DoublyLinkedList.md)
+- [X] [单向链表 Python 实现](linkedlist/SingleLinkedList.md)
+- [X] [双向链表 Python 实现](linkedlist/DoublyLinkedList.md)
