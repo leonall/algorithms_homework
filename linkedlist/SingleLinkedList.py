@@ -197,6 +197,14 @@ class SingleLinkedList(object):
             current = current.next
         print()
 
+    def tolist(self):
+        res = []
+        current = self.head
+        while current:
+            res.append(current.data)
+            current = current.next
+        return res
+
 
 if __name__ == '__main__':
     ls = SingleLinkedList()
@@ -218,4 +226,5 @@ if __name__ == '__main__':
     ls.remove(2)
     ls.show()
     ls.set(-12, 20)
+    print(ls.tolist())
     ls.show()

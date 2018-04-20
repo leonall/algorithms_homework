@@ -231,3 +231,26 @@ def __reversed__(self):
 def clear(self):
     self.head = None
 ```
+
+### 11. 打印链表
+
+```
+def show(self):
+    current = self.head
+    while current:
+        print(current.data, end=" ")
+        current = current.next
+    print()
+```
+
+### 12. 将链表转换成 List
+
+```
+def tolist(self):
+    res = []
+    current = self.head
+    while current:
+        res.append(current.data)
+        current = current.next
+    return res
+```
