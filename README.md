@@ -37,8 +37,8 @@
 * 不支持随机访问：无法根据下标去直接访问，必须从头一个一个往后面找。（线性阶）
 * 头尾位置的删除插入 O(1)，中间位置，删除前需要顺序查找，效率 O(n)。
 
-- [X] [单向链表 Python 实现](linkedlist/SingleLinkedList.md)
-- [X] [双向链表 Python 实现](linkedlist/DoublyLinkedList.md)
+- [X] [单向链表 Python 实现](linkedlist/single_linkedlist.md)
+- [X] [双向链表 Python 实现](linkedlist/single_linkedlist.md)
 - [X] [链表去重](linkedlist/remove_duplicates.py)
 - [X] [两整数的加法](linkedlist/add_two_numbers.py)
 
@@ -47,6 +47,6 @@
 栈是“后进先出”为特点的数据结果
 
 - [X] [用数组结构建立的栈](stack/stack.py)
-- [X] [用链表结构建立的栈](stack/LinkedListStack.py)
+- [X] [用链表结构建立的栈](stack/linkedlist_stack.py)
 - [X] [简化存储路径](stack/simplify_path.py)
 - [X] [判断括号的使用是否正确](stack/valid_parenthesis.py)
