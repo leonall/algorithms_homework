@@ -46,5 +46,7 @@
 
 栈是“后进先出”为特点的数据结果
 
-- [X] [用数组结构建立的栈](stack/stack.md)
-- [X] [用链表结构建立的栈](stack/LinkedListStack.md)
+- [X] [用数组结构建立的栈](stack/stack.py)
+- [X] [用链表结构建立的栈](stack/LinkedListStack.py)
+- [X] [简化存储路径](stack/simplify_path.py)
+- [X] [判断括号的使用是否正确](stack/valid_parenthesis.py)
