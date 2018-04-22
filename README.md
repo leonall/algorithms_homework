@@ -41,3 +41,10 @@
 - [X] [双向链表 Python 实现](linkedlist/DoublyLinkedList.md)
 - [X] [链表去重](linkedlist/remove_duplicates.py)
 - [X] [两整数的加法](linkedlist/add_two_numbers.py)
+
+### 栈
+
+栈是“后进先出”为特点的数据结果
+
+- [X] [用数组结构建立的栈](stack/stack.md)
+- [X] [用链表结构建立的栈](stack/LinkedListStack.md)
