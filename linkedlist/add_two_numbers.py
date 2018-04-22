@@ -14,7 +14,7 @@ Output: 7 -> 0 -> 8
 https://github.com/yunshuipiao/algorithms/blob/master/linkedlist/add_two_numbers.py
 """
 
-from SingleLinkedList import SingleLinkedList
+from single_linkedlist import SingleLinkedList
 import numpy as np
 import unittest
 

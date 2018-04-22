@@ -6,7 +6,7 @@ http://nbviewer.jupyter.org/github/donnemartin/interactive-coding-challenges/
 blob/master/linked_lists/remove_duplicates/remove_duplicates_solution.ipynb
 """
 
-from SingleLinkedList import SingleLinkedList
+from single_linkedlist import SingleLinkedList
 import numpy as np
 import unittest
 
