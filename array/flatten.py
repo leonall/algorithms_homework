@@ -31,12 +31,12 @@ def list_flatten(lst):
     return ls
 
 
-class Test_list_flatten(unittest.TestCase):
-
-    def test_list_flatten(self):
-        lst = np.arange(6).reshape(2, 3, 1).tolist()
-        self.assertEqual(list_flatten(lst), list(range(6)))
-
-
 if __name__ == '__main__':
+
+    class Test_list_flatten(unittest.TestCase):
+
+        def test_list_flatten(self):
+            lst = np.arange(6).reshape(2, 3, 1).tolist()
+            self.assertEqual(list_flatten(lst), list(range(6)))
+
     unittest.main()

@@ -14,9 +14,9 @@ from stack import Stack
 
 def is_valid_parenthesis(string):
     stack = Stack()
-    dic = { ")":"(",
-            "}":"{",
-            "]":"["}
+    dic = {")": "(",
+           "}": "{",
+           "]": "["}
     for char in string:
         if char in dic.values():
             stack.push(char)

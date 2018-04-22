@@ -27,16 +27,17 @@ def two_sum(lst, target):
     return None
 
 
-class Test_two_sum(unittest.TestCase):
-
-    def test_two_sum(self):
-        lst = range(20)
-        for _ in range(10):
-            target = np.random.choice(lst)
-            res = two_sum(lst, target)
-            if res:
-                self.assertEqual((lst[res[0]] + lst[res[1]]), target)
-            self.assertIsNone(two_sum(lst, -1), None)
-
 if __name__ == '__main__':
+
+    class Test_two_sum(unittest.TestCase):
+
+        def test_two_sum(self):
+            lst = range(20)
+            for _ in range(10):
+                target = np.random.choice(lst)
+                res = two_sum(lst, target)
+                if res:
+                    self.assertEqual((lst[res[0]] + lst[res[1]]), target)
+                self.assertIsNone(two_sum(lst, -1), None)
+
     unittest.main()

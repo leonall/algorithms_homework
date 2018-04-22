@@ -31,17 +31,17 @@ def three_sum(lst, target):
     return None
 
 
-class Test_three_sum(unittest.TestCase):
-
-    def test_three_sum(self):
-        lst = range(20)
-        for _ in range(10):
-            target = np.random.choice(lst)
-            res = three_sum(lst, target)
-            if res:
-                self.assertEqual((lst[res[0]] + lst[res[1]] + lst[res[2]]), target)
-            self.assertIsNone(three_sum(lst, -1), None)
-
-
 if __name__ == '__main__':
+
+    class Test_three_sum(unittest.TestCase):
+
+        def test_three_sum(self):
+            lst = range(20)
+            for _ in range(10):
+                target = np.random.choice(lst)
+                res = three_sum(lst, target)
+                if res:
+                    self.assertEqual((lst[res[0]] + lst[res[1]] + lst[res[2]]), target)
+                self.assertIsNone(three_sum(lst, -1), None)
+
     unittest.main()

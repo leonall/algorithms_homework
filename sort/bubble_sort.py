@@ -23,14 +23,15 @@ def bubble_sort(seq):
     return seq
 
 
-class Test_bubble_sort(unittest.TestCase):
-
-    def test_bubble_sort(self):
-        for _ in range(10):
-            arr = np.random.randint(0, 100, 20).tolist()
-            sorted_arr = sorted(arr)
-            self.assertEqual(bubble_sort(arr), sorted_arr)
-            self.assertEqual(bubble_sort(sorted_arr), sorted_arr)
-
 if __name__ == '__main__':
+
+    class Test_bubble_sort(unittest.TestCase):
+
+        def test_bubble_sort(self):
+            for _ in range(10):
+                arr = np.random.randint(0, 100, 20).tolist()
+                sorted_arr = sorted(arr)
+                self.assertEqual(bubble_sort(arr), sorted_arr)
+                self.assertEqual(bubble_sort(sorted_arr), sorted_arr)
+
     unittest.main()
