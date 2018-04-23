@@ -44,7 +44,7 @@
 
 ### 栈
 
-栈是**“后进先出”**为特点的数据结构
+栈是**后进先出**为特点的数据结构
 
 - [X] [用数组结构建立的栈](stack/stack.py)
 - [X] [用链表结构建立的栈](stack/linkedlist_stack.py)
@@ -53,7 +53,8 @@
 
 ### 队列
 
-队列**“先进先出”**为特点的数据结构
+队列**先进先出**为特点的数据结构
 
 - [X] [用数组结构建立的栈](queue/queue.py)
 - [X] [用链表结构建立的栈](queue/linkedlist_queue.py)
+- [X] [max_sliding_window](queue/max_sliding_window.py)
