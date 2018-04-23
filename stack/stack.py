@@ -29,7 +29,7 @@ class Stack(object):
         Python List type is a dynamic array, so we have to restrict its
         dynamic nature to make it work like a static array.
         """
-        self.array = [None] * 10
+        self.array = [None] * size
         self.top = 0
 
     def size(self):
@@ -40,7 +40,7 @@ class Stack(object):
 
     def push(self, item):
         if self.top == len(self.array):
-            self.expend()
+            self._expend()
         self.array[self.top] = item
         self.top += 1
 
@@ -61,12 +61,12 @@ class Stack(object):
     def isEmpty(self):
         return self.top == 0
 
-    def expend(self):
+    def _expend(self):
         '''
         double the size of the stack
         '''
         NewArray = [None] * len(self.array) * 2
-        for i, item in self.array:
+        for i, item in enumerate(self.array):
             NewArray[i] = self.array[i]
         self.array = NewArray
 
@@ -87,7 +87,7 @@ class TestStack(unittest.TestCase):
     def _setUp(self):
         self.stack = Stack()
         self._lst = []
-        for i in np.random.randint(0, 10, 10):
+        for i in np.random.randint(0, 10, 21):
             self.stack.push(i)
             self._lst.append(i)
         self._lst = self._lst[::-1]
