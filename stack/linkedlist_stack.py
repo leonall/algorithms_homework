@@ -12,27 +12,27 @@ class StackNode(object):
 
 class LinkedListStack(object):
     def __init__(self):
-        self.top = 0
+        self._top = 0
         self.head = None
 
     def isEmpty(self):
-        return self.top == 0
+        return self._top == 0
 
     def __len__(self):
-        return self.top
+        return self._top
 
     def push(self, value):
         node = StackNode(value)
         node.next = self.head
         self.head = node
-        self.top += 1
+        self._top += 1
 
     def pop(self):
         if self.isEmpty():
             raise IndexError("stack is empty")
         value = self.head.value
         self.head = self.head.next
-        self.top -= 1
+        self._top -= 1
         return value
 
     def peek(self):

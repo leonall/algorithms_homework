@@ -29,54 +29,54 @@ class Stack(object):
         Python List type is a dynamic array, so we have to restrict its
         dynamic nature to make it work like a static array.
         """
-        self.array = [None] * size
-        self.top = 0
+        self._array = [None] * size
+        self._top = 0
 
     def size(self):
-        return self.top
+        return self._top
 
     def __len__(self):
-        return self.top
+        return self._top
 
     def push(self, item):
-        if self.top == len(self.array):
+        if self._top == len(self._array):
             self._expend()
-        self.array[self.top] = item
-        self.top += 1
+        self._array[self._top] = item
+        self._top += 1
 
     def pop(self):
         if self.isEmpty():
             raise IndexError('Stack is empty!')
-        value = self.array[self.top - 1]
-        self.array[self.top - 1] = None
-        self.top -= 1
+        value = self._array[self._top - 1]
+        self._array[self._top - 1] = None
+        self._top -= 1
         return value
 
     def peek(self):
         if self.isEmpty():
             raise IndexError('Stack is empty!')
         else:
-            return self.array[self.top - 1]
+            return self._array[self._top - 1]
 
     def isEmpty(self):
-        return self.top == 0
+        return self._top == 0
 
     def _expend(self):
         '''
         double the size of the stack
         '''
-        NewArray = [None] * len(self.array) * 2
-        for i, item in enumerate(self.array):
-            NewArray[i] = self.array[i]
-        self.array = NewArray
+        NewArray = [None] * len(self._array) * 2
+        for i, item in enumerate(self._array):
+            NewArray[i] = self._array[i]
+        self._array = NewArray
 
     def __iter__(self):
         if self.isEmpty():
             raise IndexError('Stack is empty!')
-        i = self.top
+        i = self._top
         while True:
             if i > 0:
-                yield self.array[i-1]
+                yield self._array[i-1]
                 i -= 1
             else:
                 raise StopIteration
