@@ -41,33 +41,34 @@ class NoDuplicatesLinkedList(SingleLinkedList):
                     node = node.next
 
 
+class TestNoDuplicatesLinkedList(unittest.TestCase):
+
+    def setUp(self):
+        self.nums = 5
+
+    def _setUp(self):
+        self.linkedlist = NoDuplicatesLinkedList()
+        self.set = set()
+        vars = np.random.randint(0, 5, self.nums)
+        for var in vars:
+            self.linkedlist.add(var)
+            self.set.add(var)
+
+    def test_remove_dupes(self):
+        for _ in range(10):
+            self._setUp()
+            self.assertEqual(len(self.linkedlist), self.nums)
+            self.linkedlist.remove_dupes()
+            self.assertEqual(len(self.linkedlist), len(self.set))
+
+    def test_remove_dupes2(self):
+        for _ in range(10):
+            self._setUp()
+            self.assertEqual(len(self.linkedlist), self.nums)
+            self.linkedlist.remove_dupes2()
+            self.assertEqual(len(self.linkedlist), len(self.set))
+
+
 if __name__ == '__main__':
-
-    class TestNoDuplicatesLinkedList(unittest.TestCase):
-
-        def setUp(self):
-            self.nums = 5
-
-        def _setUp(self):
-            self.linkedlist = NoDuplicatesLinkedList()
-            self.set = set()
-            vars = np.random.randint(0, 5, self.nums)
-            for var in vars:
-                self.linkedlist.add(var)
-                self.set.add(var)
-
-        def test_remove_dupes(self):
-            for _ in range(10):
-                self._setUp()
-                self.assertEqual(len(self.linkedlist), self.nums)
-                self.linkedlist.remove_dupes()
-                self.assertEqual(len(self.linkedlist), len(self.set))
-
-        def test_remove_dupes2(self):
-            for _ in range(10):
-                self._setUp()
-                self.assertEqual(len(self.linkedlist), self.nums)
-                self.linkedlist.remove_dupes2()
-                self.assertEqual(len(self.linkedlist), len(self.set))
 
     unittest.main()

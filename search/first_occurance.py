@@ -41,9 +41,6 @@ def first_occurance2(ls, query):
     else:
         return False
 
-
-if __name__ == '__main__':
-
     class Test_bubble_sort(unittest.TestCase):
 
         def setUp(self):
@@ -69,5 +66,8 @@ if __name__ == '__main__':
 
         def test_binary_search2(self):
             self._test_binary_search(self.fun2)
+
+
+if __name__ == '__main__':
 
     unittest.main()

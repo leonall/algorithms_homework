@@ -33,15 +33,16 @@ def simplify_path(path):
     return '/' + '/'.join(list(stack)[::-1])
 
 
+class TestSimplifyPath(unittest.TestCase):
+
+    def setUp(self):
+        self.p = '/my/name/is/..//keon'
+        self.sp = '/my/name/keon'
+
+    def test_simplify_path(self):
+            self.assertEqual(simplify_path(self.p), self.sp)
+
+
 if __name__ == '__main__':
-
-    class TestSimplifyPath(unittest.TestCase):
-
-        def setUp(self):
-            self.p = '/my/name/is/..//keon'
-            self.sp = '/my/name/keon'
-
-        def test_simplify_path(self):
-                self.assertEqual(simplify_path(self.p), self.sp)
 
     unittest.main()

@@ -28,16 +28,18 @@ def is_valid_parenthesis(string):
                 return False
     return stack.isEmpty()
 
+
+class TestValidPars(unittest.TestCase):
+    def test_valid_pars(self):
+        self.assertTrue(is_valid_parenthesis('(())'))
+        self.assertTrue(is_valid_parenthesis('([])'))
+        self.assertTrue(is_valid_parenthesis('{([])}'))
+
+        self.assertFalse(is_valid_parenthesis('())'))
+        self.assertFalse(is_valid_parenthesis('([(])'))
+        self.assertFalse(is_valid_parenthesis('{[])}'))
+
+
 if __name__ == '__main__':
-
-    class TestValidPars(unittest.TestCase):
-        def test_valid_pars(self):
-            self.assertTrue(is_valid_parenthesis('(())'))
-            self.assertTrue(is_valid_parenthesis('([])'))
-            self.assertTrue(is_valid_parenthesis('{([])}'))
-
-            self.assertFalse(is_valid_parenthesis('())'))
-            self.assertFalse(is_valid_parenthesis('([(])'))
-            self.assertFalse(is_valid_parenthesis('{[])}'))
 
     unittest.main()

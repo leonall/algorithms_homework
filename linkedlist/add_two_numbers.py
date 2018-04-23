@@ -46,51 +46,52 @@ def add_two_numbers(left_linkedlist, right_linkedlist):
         return res
 
 
+class TestNoDuplicatesLinkedList(unittest.TestCase):
+
+    def _setUp(self):
+        self.left, self.right = SingleLinkedList(), SingleLinkedList()
+
+    def integer_to_list(self, integer):
+        '''
+        123 --> [3, 2, 1]
+        '''
+        return list(map(int, str(integer)))[::-1]
+
+    def list_to_integer(self, lst):
+        '''
+        [1, 2, 3] --> 321
+        '''
+        integer = 0
+        for bit, val in enumerate(lst):
+            integer += val * 10 ** bit
+        return integer
+
+    def test_add_two_numbers(self):
+        self._setUp()
+        [self.left.add(i) for i in (2, 4, 3)]
+        [self.right.add(i) for i in (5, 6, 4)]
+        res = add_two_numbers(self.left, self.right)
+        self.assertEqual(res.tolist(), [7, 0, 8])
+
+    def test_add_two_numbers2(self):
+        self._setUp()
+        [self.left.add(i) for i in (2, 4, 6)]
+        [self.right.add(i) for i in (5, 6, 4)]
+        res = add_two_numbers(self.left, self.right)
+        self.assertEqual(res.tolist(), [7, 0, 1, 1])
+
+    def test_add_two_numbers3(self):
+        for _ in range(10):
+            self._setUp()
+            left = np.random.randint(100, 999)
+            right = np.random.randint(100, 999)
+            _sum = left + right
+            [self.left.add(i) for i in self.integer_to_list(left)]
+            [self.right.add(i) for i in self.integer_to_list(right)]
+            res = add_two_numbers(self.left, self.right)
+            self.assertEqual(res.tolist(), self.integer_to_list(_sum))
+
+
 if __name__ == '__main__':
-
-    class TestNoDuplicatesLinkedList(unittest.TestCase):
-
-        def _setUp(self):
-            self.left, self.right = SingleLinkedList(), SingleLinkedList()
-
-        def integer_to_list(self, integer):
-            '''
-            123 --> [3, 2, 1]
-            '''
-            return list(map(int, str(integer)))[::-1]
-
-        def list_to_integer(self, lst):
-            '''
-            [1, 2, 3] --> 321
-            '''
-            integer = 0
-            for bit, val in enumerate(lst):
-                integer += val * 10 ** bit
-            return integer
-
-        def test_add_two_numbers(self):
-            self._setUp()
-            [self.left.add(i) for i in (2, 4, 3)]
-            [self.right.add(i) for i in (5, 6, 4)]
-            res = add_two_numbers(self.left, self.right)
-            self.assertEqual(res.tolist(), [7, 0, 8])
-
-        def test_add_two_numbers2(self):
-            self._setUp()
-            [self.left.add(i) for i in (2, 4, 6)]
-            [self.right.add(i) for i in (5, 6, 4)]
-            res = add_two_numbers(self.left, self.right)
-            self.assertEqual(res.tolist(), [7, 0, 1, 1])
-
-        def test_add_two_numbers3(self):
-            for _ in range(10):
-                self._setUp()
-                left = np.random.randint(100, 999)
-                right = np.random.randint(100, 999)
-                _sum = left + right
-                [self.left.add(i) for i in self.integer_to_list(left)]
-                [self.right.add(i) for i in self.integer_to_list(right)]
-                res = add_two_numbers(self.left, self.right)
-                self.assertEqual(res.tolist(), self.integer_to_list(_sum))
 
     unittest.main()

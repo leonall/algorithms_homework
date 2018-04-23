@@ -50,22 +50,23 @@ def quick_sort2(seq):
     return quick_sort(left) + middle + quick_sort(right)
 
 
+class Test_bubble_sort(unittest.TestCase):
+
+    def test_quick_sort(self):
+        for _ in range(10):
+            arr = np.random.randint(0, 100, 20).tolist()
+            sorted_arr = sorted(arr)
+            self.assertEqual(quick_sort(arr), sorted_arr)
+            self.assertEqual(quick_sort(sorted_arr), sorted_arr)
+
+    def test_quick_sort2(self):
+        for _ in range(10):
+            arr = np.random.randint(0, 100, 20).tolist()
+            sorted_arr = sorted(arr)
+            self.assertEqual(quick_sort2(arr), sorted_arr)
+            self.assertEqual(quick_sort2(sorted_arr), sorted_arr)
+
+
 if __name__ == '__main__':
-
-    class Test_bubble_sort(unittest.TestCase):
-
-        def test_quick_sort(self):
-            for _ in range(10):
-                arr = np.random.randint(0, 100, 20).tolist()
-                sorted_arr = sorted(arr)
-                self.assertEqual(quick_sort(arr), sorted_arr)
-                self.assertEqual(quick_sort(sorted_arr), sorted_arr)
-
-        def test_quick_sort2(self):
-            for _ in range(10):
-                arr = np.random.randint(0, 100, 20).tolist()
-                sorted_arr = sorted(arr)
-                self.assertEqual(quick_sort2(arr), sorted_arr)
-                self.assertEqual(quick_sort2(sorted_arr), sorted_arr)
 
     unittest.main()
