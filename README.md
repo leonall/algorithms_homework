@@ -58,3 +58,7 @@
 - [X] [用数组结构建立的栈](queue/queue.py)
 - [X] [用链表结构建立的栈](queue/linkedlist_queue.py)
 - [X] [max_sliding_window](queue/max_sliding_window.py)
+
+### 树
+
+- [X] [binary_search_tree](tree/binary_search_tree.py)
