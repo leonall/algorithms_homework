@@ -50,6 +50,7 @@
 - [X] [用链表结构建立的栈](stack/linkedlist_stack.py)
 - [X] [简化存储路径](stack/simplify_path.py)
 - [X] [判断括号的使用是否正确](stack/valid_parenthesis.py)
+- [X] [对栈进行排序](stack/sort_a_stack.py)
 
 ### 队列
 
