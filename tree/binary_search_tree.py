@@ -59,7 +59,7 @@ class BinarySearchTree(object):
         if self.root is not None:
             return self._find(val, self.root)
         else:
-            raise ValueError('{} is not in tree'.format(val))
+            raise ValueError('tree is empty')
 
     def _find(self, val, node):
         if val == node.value:
@@ -106,12 +106,9 @@ class BinarySearchTree(object):
                 print()
                 thislevel = nextlevel
 
+
 if __name__ == '__main__':
-    '''
-         3
-     0     4
-       2      8
-    '''
+
     tree = BinarySearchTree()
     tree.add(3)
     tree.add(4)
@@ -122,7 +119,13 @@ if __name__ == '__main__':
     tree.add(3)
     tree.traverse()
     # tree.printTree()
-    # print(tree.find(3).value)
-    # print(tree.find(0).value)
-    # tree.deleteTree()
-    # tree.printTree()
+    print(tree.find(3).value)
+    print(tree.find(-3).value)
+
+    '''
+    3
+    0  4
+    -1  2  3  8
+    3
+    ValueError: -3 is not in tree
+    '''

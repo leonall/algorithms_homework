@@ -64,3 +64,7 @@
 
 - [X] [binary_search_tree](tree/binary_search_tree.py)
 - [X] [二叉树遍历](tree/binary_tree_traversal.py)
+- [X] [树的深度](tree/depth_of_tree.py)
+- [X] [invert_tree](tree/invert_tree.py)
+- [X] [是否是平衡树](tree/is_balance_tree.py)
+- [X] [最近的公共祖先](tree/lowest_commom_ancestor.py)
