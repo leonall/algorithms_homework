@@ -37,9 +37,9 @@ def garage(initial, final):
     :return steps: int
     :return seq: List
     """
-    initial = initial[:]
+    initial = initial
     steps = 0
-    seq = []
+    seq = [initial]
     while initial != final:
         zero = initial.index(0)
         if zero != final.index(0):
